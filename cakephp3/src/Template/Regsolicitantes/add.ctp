@@ -11,22 +11,20 @@
         <li><?= $this->Html->link(__('New Tipolicencia'), ['controller' => 'Tipolicencias', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="regsolicitantes form large-9 medium-8 columns content">
-    <?= $this->Form->create($regsolicitante) ?>
-    <fieldset>
-        <legend><?= __('Add Regsolicitante') ?></legend>
-        <?php
-            echo $this->Form->input('tipolicencia_id', ['options' => $tipolicencias]);
-            echo $this->Form->input('dni');
-            echo $this->Form->input('nombre');
-            echo $this->Form->input('fecha');
-            echo $this->Form->input('tipo_licencia');
-            echo $this->Form->input('doc_presentada');
-            echo $this->Form->input('fecha_in');
-            echo $this->Form->input('fecha_out');
-            echo $this->Form->input('usuario_actual_gest');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<!-- inserto líneas nuevas de una estructura básica  -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h2>Crear Solicitante</h2>
+        </div>
+        <!-- hacemos el código como si fuera html y luego cogemos el código que ha generado bake y lo pegamos -->
+        <?= $this->Form->create($regsolicitante) ?>
+            <fieldset>
+                <?= $this->element("Regsolicitantes/fields") ?>
+            </fieldset>
+            <?= $this->Form->button('Crear solicitante') ?>
+          <?= $this->Form->end() ?>
+    </div>
 </div>
+
+

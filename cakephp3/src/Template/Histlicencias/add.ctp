@@ -9,15 +9,18 @@
         <li><?= $this->Html->link(__('List Histlicencias'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="histlicencias form large-9 medium-8 columns content">
-    <?= $this->Form->create($histlicencia) ?>
-    <fieldset>
-        <legend><?= __('Add Histlicencia') ?></legend>
-        <?php
-            echo $this->Form->input('fecha_solicitud');
-            echo $this->Form->input('fecha_exp', ['empty' => true]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<!-- inserto líneas nuevas de una estructura básica  -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h2>Crear Histórico de Licencia</h2>
+        </div>
+        <!-- hacemos el código como si fuera html y luego cogemos el código que ha generado bake y lo pegamos -->
+        <?= $this->Form->create($histlicencia) ?>
+            <fieldset>
+                <?= $this->element("Histlicencias/fields") ?>
+            </fieldset>
+            <?= $this->Form->button('Crear Histórico Licencia') ?>
+          <?= $this->Form->end() ?>
+    </div>
 </div>

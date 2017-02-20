@@ -12,20 +12,25 @@
         <li><?= $this->Html->link(__('New Histlicencia'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="histlicencias view large-9 medium-8 columns content">
-    <h3><?= h($histlicencia->numexp) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Numexp') ?></th>
-            <td><?= $this->Number->format($histlicencia->numexp) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fecha Solicitud') ?></th>
-            <td><?= h($histlicencia->fecha_solicitud) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fecha Exp') ?></th>
-            <td><?= h($histlicencia->fecha_exp) ?></td>
-        </tr>
-    </table>
+<!-- mostramos la vista del histórico de licencias -->
+<div class="well">
+    <h2>
+        Histórico de Licencias Nº <?= h($histlicencia->numexp) ?>
+    </h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover vertical-table">
+            <tr>
+                <th scope="row"><?= __('Numexp') ?></th>
+                <td><?= $this->Number->format($histlicencia->numexp) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Fecha Solicitud') ?></th>
+                <td><?= h($histlicencia->fecha_solicitud) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Fecha Exp') ?></th>
+                <td><?= h($histlicencia->fecha_exp) ?></td>
+            </tr>
+        </table>
+    </div>
 </div>

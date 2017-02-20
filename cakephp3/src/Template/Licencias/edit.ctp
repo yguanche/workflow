@@ -15,23 +15,18 @@
         <li><?= $this->Html->link(__('List Licencias'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="licencias form large-9 medium-8 columns content">
-    <?= $this->Form->create($licencia) ?>
-    <fieldset>
-        <legend><?= __('Edit Licencia') ?></legend>
-        <?php
-            echo $this->Form->input('numreg');
-            echo $this->Form->input('estexpediente_numexp');
-            echo $this->Form->input('histlicencia_numexp');
-            echo $this->Form->input('regsolicitante_numreg');
-            echo $this->Form->input('apl_comerc_lic');
-            echo $this->Form->input('ubicacion');
-            echo $this->Form->input('datos_fisicos_local');
-            echo $this->Form->input('user_gestiona');
-            echo $this->Form->input('fecha_in');
-            echo $this->Form->input('fecha_out', ['empty' => true]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<!-- inserto líneas nuevas de una estructura básica  -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h2>Editar Licencia</h2>
+        </div>
+        <!-- hacemos el código como si fuera html y luego cogemos el código que ha generado bake y lo pegamos -->
+       <?= $this->Form->create($licencia) ?>
+            <fieldset>
+                <?= $this->element("Licencias/fields") ?>
+            </fieldset>
+            <?= $this->Form->button('Editar Licencia') ?>
+          <?= $this->Form->end() ?>
+    </div>
 </div>

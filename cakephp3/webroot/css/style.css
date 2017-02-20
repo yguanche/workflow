@@ -1,0 +1,20 @@
+body {
+    margin: 100px 0;
+}
+
+.glyphicon {
+    font-weight: bolder;
+    padding: 3px;
+}
+
+nav  {
+  /*   border: red 5px solid;*/
+}
+.page-header {
+  /*  border: red 5px solid; */
+}
+
+.table-responsive tr  {
+  text-align: center;
+  padding: 5px;
+}

@@ -14,32 +14,37 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="estexpedientes view large-9 medium-8 columns content">
-    <h3><?= h($estexpediente->numexp) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('User') ?></th>
-            <td><?= $estexpediente->has('user') ? $this->Html->link($estexpediente->user->id, ['controller' => 'Users', 'action' => 'view', $estexpediente->user->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Est Actual') ?></th>
-            <td><?= h($estexpediente->est_actual) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('User Actual') ?></th>
-            <td><?= h($estexpediente->user_actual) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Dept Actual') ?></th>
-            <td><?= h($estexpediente->dept_actual) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Numexp') ?></th>
-            <td><?= $this->Number->format($estexpediente->numexp) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fecha Recepción') ?></th>
-            <td><?= h($estexpediente->fecha_recepción) ?></td>
-        </tr>
-    </table>
+<!-- mostramos la vista del estado del expediente -->
+<div class="well">
+    <h2>
+        Estado del expediente Nº <?= h($estexpediente->numexp) ?>
+    </h2>
+     <div class="table-responsive">
+        <table class="table table-bordered table-hover vertical-table">
+            <tr>
+                <th scope="row"><?= __('User') ?></th>
+                <td><?= $estexpediente->has('user') ? $this->Html->link($estexpediente->user->id, ['controller' => 'Users', 'action' => 'view', $estexpediente->user->id]) : '' ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Est Actual') ?></th>
+                <td><?= h($estexpediente->est_actual) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('User Actual') ?></th>
+                <td><?= h($estexpediente->user_actual) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Dept Actual') ?></th>
+                <td><?= h($estexpediente->dept_actual) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Numexp') ?></th>
+                <td><?= $this->Number->format($estexpediente->numexp) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Fecha Recepción') ?></th>
+                <td><?= h($estexpediente->fecha_recepción) ?></td>
+            </tr>
+        </table>
+    </div>
 </div>
